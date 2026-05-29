@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bootvorgang</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./assets/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="./assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <link href="./assets/bootstrap-icons-1.13.1/bootstrap-icons.min.css" rel="stylesheet">
+  <script src="./assets/jquery-4.0.0/dist/jquery.min.js"></script>
+  <script src="./js/index.js"></script>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+
+<body>
+  <script>
+    $(document).ready(function () {
+      loadHome();
+    });
+  </script>
+  <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="javascript:loadHome()"><i class="bi bi-house"></i> Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Boot</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="javascript:loadKernel()"> Post</a></li>
+              <li><a class="dropdown-item" href="javascript:loadMbr()" > Master Boot record </a></li>
+
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Kernel</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="javascript:loadKernel()"><i class="bi bi-clock-history"></i> Kernel</a></li>
+              <li><a class="dropdown-item" href="javascript:loadRamdisk()" > Ramdisk </a></li>
+              <li><a class="dropdown-item" href="javascript:loadErsterprozess()" > Erster Prozess </a></li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:loadVorwissen()">Vorwissen</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="page" class="container mt-3 text-dark">
+
+  </div>
+</body>
+
+</html>

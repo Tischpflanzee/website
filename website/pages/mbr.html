@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../assets/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+<p class="h1">Mbr</p>
+
+<p class="h2">Master Boot record</p>
+
+<p>
+    Nach dem Post lädt das BIOS in den Mbr (Master boot record) dieser bootet das Erste valide eingetragenen Bootmediums.
+    Wenn der Mbr fehlschlägt ein Bootmedium zu booten geht er zum nächsten über. Der Mbr erhält neben der Partitonstabelle
+    auch  von den Koordinaten der bis zu 4 Primär Partionen. Außerdem enthält er auch die magic number »AA55« diese
+    markiert den Sektor als bootbar. Mbr ist der Vorgänger von GPT. 
+</p>
+
+<p>
+    Oftamls verfügen bootloader über die Funktionalität ein System mit einem Password zu schützen. Oder das Laden von mehreren 
+    Betriebsystemen. Auch beim boot von einem Wechselmedium.<br>
+    Bei solchen Umfangsreichen Funktionalität, passt der gesamte code eines Bootloader nicht in die dafür reservierten 512 Bytes, vorallem 
+    da 2 Bytes für die Bootable Flag und weiter 64Bytes für die Partionstabelle verbraucht werden. Deshalb werden moderne Bootloader in zwei
+    Stufen realisiert, wobei die erste Stufe im Bootsektor bzw. im Mbr steht. Dadurch ist die einzige aufgabe vom Mbr, die zweite, auf der
+    Festplatte liegende Stufe, in den Hauptspeicher zu laden. Als Beispiel Siehe Bild
+
+</p>
+
+<img src="../images/mbr.svg" alt="Bild Mbr">
+
+
+
+
+<p><a href="javascript:loadPost()" class="btn btn-success">Zum Post</a><a href="javascript:loadKernel()" class="btn btn-success float-end">Zum Kernel</a></p>
+
+</body>
+</html>

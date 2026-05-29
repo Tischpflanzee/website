@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../assets/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+
+    <p class="h1">Post</p>
+
+    <p>Power on self test= Post </p>
+
+    <p>Post als erstes die Zentrale Hardware also folgende Komponenten:</p>
+
+    <ul>
+        <li>Cpu</li>
+        <li>Bios-Rom(Bildung einer Prüfsumme)</li>
+        <li>Dma-Kontroller</li>
+        <li>ersten 64k des Rams</li>
+        <li>Interrupt und Cache-Controller</li>
+    </ul>
+
+    <p>Danach passiert der »Test und Initialisierung von System-Erweiterungen«</p>
+
+    <ul>
+        <li>Ram über 64k</li>
+        <li>Schnittstellen</li>
+        <li>Disketten Festplatten Controler </li>
+        <li>Rom erweiterungen werden gesucht und Initialiesiert zum Beispiel Video-rom </li>
+    </ul>
+
+    <p>
+        Tritt in dieser Phase ein Fehler auf wird eine Tonfolge (teilweise auch über eine LED mit einer Folge von Kurz an aus und lang an aus) 
+        abgespielt. Für bestimmter Fehler sind genaue signale vorgeschrieben: <br>
+        <ul>
+            <li>Anhaltend oder Kein ton = Kein Netzteil</li>
+            <li>Einmal Lang = leom DRA;-Refresh</li>
+            <li>Einmal Lang, Einmal Kurz = Motherboard</li>
+            <li>Einmal lang, zweimal Kurz = Video-Controller oder Bildschirmspeicher</li>
+            <li>Dreimal Kurz = RAM</li>
+            <li>einaml kurz laufwerk oder Video-Controller</li>
+        </ul>
+    </p>
+
+    <p class="h2">Bootgeräte</p>
+
+    <p>Sind alle Tests vom Post Erfolgreich sucht das Bios nach Bootgeräten für eine gültige Bootsquenz. Bootgeräte können volgende Geräte sein:</p>
+
+    <ul>
+        <li>Diskette</li>
+        <li>Festplatte</li>
+        <li>CD-ROM-Laufwerk</li>
+        <li>Netzwerkkarte</li>
+    </ul>
+
+    <p>
+        Welche Bootmedien durchsucht werden und die Reihenfolge, in der das BIOS die Geräte durchsucht, kann meistens im CMOS-Setup eingestellt werden.
+        Der erste gefundene Bootkode wird geladen und gestartet.
+    </p>
+
+
+
+<a href="javascript:loadHome()" class="btn btn-success ">Zur Startseite</a><a href="javascript:loadMbr()" class="btn btn-success float-end">Zum Mbr</a></p>
+
+
+
+</body>
+</html>

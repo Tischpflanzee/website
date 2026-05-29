@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../assets/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<p class="h1">Kernel</p>
+
+<p class="h2">Kurze Zusammen gefasst was ist ein Kernel</p>
+
+
+<p>Was ist über Haupt ein Kernel? Kurzgesagt stellt ein Krenel Treiber bereit und inisitaliesiert die Hardware, also wie eine Brücke, damit Hardware
+   und Software mit einaner »reden« können.
+</p>
+
+<p class="h2">Nutzen im Boot vorgang</p>
+
+<p>
+   Am Anfang sind die Tätigkeiten des Kernels sehr nahe an der Hardware und. Er ermittelt aus dem Bios elementare Parameter und schaltet den Prozessor
+   in den Protected mode. Die nächsten Schritte betreffen die Initialisierung der Speicherverwaltung (MMU), des eventuell vorhandenen Coprozessors und 
+   der Interruptcontroller sowie die Erzeugung einer minimalen Umgebung.
+</p>
+
+<p>
+   Die bis jetzt getätigte schritten sind alles Assembler-Routinen. Die weitern Funktionen sind weniger Architekturabhängig und deswegen in der Sprache C
+   implementiert.<br>
+   Danach läuft kurzzeitig der Idel-Prozess, der Idle Prozesser ist ein Pseudo-Prozess und ist immer aktiv und kann als zwichenablage für die ungenutzte
+   Proessor Kapzität verstanden werden. Danach ist er nicht mehr sichtbar 
+</p>
+
+<p>
+  Danach nimmt sich der init Process die Prozessnummer 0 und gilt dann als erster Prozess. Jeder Prozess bzw. Prozessfamile wird hat irgendwo den Ursprung von Init.<br>
+  Init sorgt auch für seine absoluter Alleinherrschaft und sperrt prozess 0 bzw.  den Zugang zu den Kernelfunktionen, da in den nächsten Schriten init 
+  keiner dazwichen funken darf. Init kommt seinen Namen gleich und fängt an zu initialisieren, worum es sich konkret handel hängt zwar vom Kernel, grundlegend 
+  werden PCI-Geräte und Sockets.
+</p>
+
+<p>
+  Ersten Dämonen werden ins Leben gerufen »bdflush« zu synchronisation von Cache und Dateisystemen und der »kswapd« zur Verwaltung des Swapspeichers.
+  Anschließend wird dem Kernel unterstützte Binärformate und Dateisysteme bekannt gegeben und anschließen wird versucht, das Root-Dateisystem zu mounten.
+  Ist nichts Schief gelaufen gibt init den Kernel wieder Frei und lässt den anderen Prozessen eine Chance.
+</p>
+
+
+
+
+<a href="javascript:loadHome()" class="btn btn-success">Zur Startseite</a><a href="javascript:loadRamdisk()" class="btn btn-success float-end">Zur Ramdisk</a></p>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../assets/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <p class="h1">Ramdisk</p>
+
+  <p class="h2">Warum eine Ramdisk</p>
+
+  <p>
+    Um auf Hardware zugreifen zu können braucht linux entsprechende treibe bsp. Treiber für den Festplatten-controler. Diese Treibe können entweder direkt
+    in dem Kernel intergriet sein oder auf dynamisch ladbaren Modulen vorliegen. Die Menge der fest einkompilierten Treiber ist allerdings beschränkt, da
+    in der Ladephase des Kernels dieser vollständig in den Hauptspeicher passen muss. Zum Zeitpunkt des Ladens befindet sich der rechner noch im Real Modus,
+    dass heißt das der adressierbare Hauptspeicher und damit auch die Größe des Kernels begrenzt ist. (640kByte)
+  </p>
+
+  <p class="h2">Das Problem ohne Ramdisk</p>
+
+  <p>
+    Um module Verwenden zu können müssen diese irgendwo auf der Festplatte liegen, dass heißt der Kernel muss auf die festplatte zugreifen können wofür
+    er den Treiber braucht. Nur leider gibt es nicht den einen Treiber es gibt etliche Treiber. Bei einem Universalen Treiber wie z.B linux sind das ziemlich
+    viele Treiber.
+  </p>
+
+  <p class="h2">Funktionweise mit Ramdisk</p>
+
+  <p>
+    Eine Ramdisk ist ein Lösung zu diesem Problem und löst dies in zwei schritten. Die Ramdisk belegt einen Teil des RAM und legt ein Dateisystem an.
+    Der bootloader legt nun in diesem Speicher die datei »initrd« und den (minimalen)Kernel hintereinander ab. Der nun zu startenen (minimalen) Kernel.
+     Dieser Kernel erhält nun den Treiber, um den Inhalt aus von »initrd« in eine Ramdisk zu entpacken und diese als sein Root-Dateisystem zu mounten. Die ursprüngliche Datei »initrd« wird aus dem Hauptspeicher entfernt. 
+  </p>
+
+  <p>
+    In der Ramdisk sollte nun eine Datei /linuxrc existieren, die nun abgearbeitet wird (im auftrag beinhaltet diese ausführbare Datei Schritte zum 
+    Testen der Hardware und zum Laden der notwendigen Module zum Zugriff auf die erkannten Geräte). Sobald die Datei abgearbeitet wurde, wird das 
+    »eigentliche« Dateisystem als Wurzelverzeichnis gemountet.
+  </p>
+
+<a href="javascript:loadKernel()" class="btn btn-success">Zum Kernel</a><a href="javascript:loadErsterprozess()" class="btn btn-success float-end">Zum Ersten Prozess</a></p>
+
+
+
+</body>
+</html>
